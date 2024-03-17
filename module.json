@@ -47,42 +47,42 @@
 	],
 	"packs": [
     {
-      "name": "abilities",
+      "name": "ability",
       "label": "Abilities",
       "path": "packs/abilities",
       "entity": "Item",
       "type": "Item"
     },
     {
-      "name": "backgrounds",
+      "name": "background",
       "label": "Backgrounds",
       "path": "packs/backgrounds",
       "entity": "Item",
       "type": "Item"
     },
     {
-      "name": "classes",
+      "name": "class",
       "label": "Classes",
       "path": "packs/classes",
       "entity": "Item",
       "type": "Item"
     },
     {
-      "name": "crew-abilities",
+      "name": "crew_ability",
       "label": "Crew Abilities",
       "path": "packs/crew-abilities",
       "entity": "Item",
       "type": "Item"
     },
     {
-      "name": "crew-reputation",
+      "name": "crew_reputation",
       "label": "Crew Reputation",
       "path": "packs/crew-reputation",
       "entity": "Item",
       "type": "Item"
     },
     {
-      "name": "crew-upgrades",
+      "name": "crew_upgrade",
       "label": "Crew Upgrades",
       "path": "packs/crew-upgrades",
       "entity": "Item",
@@ -110,28 +110,28 @@
       "type": "Macro"
     },
     {
-      "name": "factions",
+      "name": "faction",
       "label": "Factions",
       "path": "packs/factions",
       "entity": "Item",
       "type": "Item"
     },
     {
-      "name": "heritages",
+      "name": "heritage",
       "label": "Heritages",
       "path": "packs/heritages",
       "entity": "Item",
       "type": "Item"
     },
     {
-      "name": "items",
+      "name": "item",
       "label": "Items",
       "path": "packs/items",
       "entity": "Item",
       "type": "Item"
     },
     {
-      "name": "npcs",
+      "name": "npc",
       "label": "NPCs",
       "path": "packs/npcs",
 	  "system": "blades-in-the-dark",
@@ -139,7 +139,7 @@
       "type": "Actor"
     },
     {
-      "name": "vices",
+      "name": "vice",
       "label": "Indulgences",
       "path": "packs/vices",
       "entity": "Item",
@@ -150,22 +150,22 @@
     {
       "name": "Court of Blades",
       "sorting": "m",
-      "color": "#3f8230",
+      "color": "#850505",
       "packs": [
-        "abilities",
-        "backgrounds",
-        "classes",
-        "crew-abilities",
-        "crew-reputation",
-        "crew-upgrades",
+        "ability",
+        "background",
+        "class",
+        "crew_ability",
+        "crew_reputation",
+        "crew_upgrades",
         "entaglements",
         "entanglements-journals",
         "entanglements-macro",
-        "factions",
-        "heritages",
-        "items",
-        "npcs",
-        "vices"
+        "faction",
+        "heritage",
+        "item",
+        "npc",
+        "vice"
       ]
     }
   ]
