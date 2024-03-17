@@ -286,7 +286,7 @@
 "BITD.RollAcquireAssetCritical": "Exceptional result.",
 "BITD.RollAcquireAssetSuccess": "Good result.",
 "BITD.RollAcquireAssetPartialSuccess": "Mixed result.",
-"BITD.RollAcquireAssetFailure": "Bad result."
+"BITD.RollAcquireAssetFailure": "Bad result.",
 
 "bitd-alt.hello": "hello",
 "bitd-alt.items": "Items",
