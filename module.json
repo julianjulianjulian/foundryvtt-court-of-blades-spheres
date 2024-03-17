@@ -1,0 +1,176 @@
+{
+  "name": "court-of-blades",
+  "title": "Court of Blades",
+  "description": "",
+  "version": "1",
+  "url": "This is auto replaced",
+  "manifest": "This is auto replaced",
+  "download": "This is auto replaced",
+  "manifestPlusVersion": "1.2.0",
+  "minimumCoreVersion": "10",
+  "compatibility": {
+    "minimum": 10,
+    "verified": 11
+  },
+  "authors": [
+    {
+      "name": "PinkFlumph",
+      "url": "https://github.com/pinkflumph"
+    }
+  ],
+  "dependencies": [
+    {
+      "name": "blades-in-the-dark",
+      "manifest": "https://raw.githubusercontent.com/megastruktur/foundryvtt-blades-in-the-dark/master/system.json",
+      "type": "system"
+    }
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    },
+    {
+      "lang": "ru",
+      "name": "Russian",
+      "path": "languages/ru.json"
+    }
+  ],
+  "packs": [
+    {
+      "name": "abilities",
+      "label": "Abilities",
+      "path": "packs/abilities",
+      "entity": "Item",
+      "type": "Item"
+    },
+    {
+      "name": "backgrounds",
+      "label": "Backgrounds",
+      "path": "packs/backgrounds",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "classes",
+      "label": "Classes",
+      "path": "packs/classes",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "crew-abilities",
+      "label": "Crew Abilities",
+      "path": "packs/crew-abilities",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "crew-reputation",
+      "label": "Crew Reputation",
+      "path": "packs/crew-reputation",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "crew-upgrades",
+      "label": "Crew Upgrades",
+      "path": "packs/crew-upgrades",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "entaglements",
+      "label": "Entaglements",
+      "path": "packs/entaglements",
+      "entity": "RollTable",
+      "type": "RollTable",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "entanglements-journals",
+      "label": "Entanglements Journals",
+      "path": "packs/entanglements-journals",
+      "entity": "JournalEntry",
+      "type": "JournalEntry",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "entanglements-macro",
+      "label": "Entanglements Macro",
+      "path": "packs/entanglements-macro",
+      "entity": "Macro",
+      "type": "Macro",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "factions",
+      "label": "Factions",
+      "path": "packs/factions",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "heritages",
+      "label": "Heritages",
+      "path": "packs/heritages",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "items",
+      "label": "Items",
+      "path": "packs/items",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "npcs",
+      "label": "NPCs",
+      "path": "packs/npcs",
+      "entity": "Actor",
+      "type": "Actor",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    },
+    {
+      "name": "vices",
+      "label": "Indulgences",
+      "path": "packs/vices",
+      "entity": "Item",
+      "type": "Item",
+      "package": "forge-vtt-shared-compendiums-court-of-blades"
+    }
+  ],
+  "packFolders": [
+    {
+      "name": "Court of Blades",
+      "sorting": "m",
+      "color": "#3f8230",
+      "packs": [
+        "abilities",
+        "backgrounds",
+        "classes",
+        "crew-abilities",
+        "crew-reputation",
+        "crew-upgrades",
+        "entaglements",
+        "entanglements-journals",
+        "entanglements-macro",
+        "factions",
+        "heritages",
+        "items",
+        "npcs",
+        "vices"
+      ]
+    }
+  ]
+}

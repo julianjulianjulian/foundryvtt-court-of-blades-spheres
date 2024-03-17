@@ -1,0 +1,22 @@
+{
+    "skulk": {
+        "label": "COB.SkillsSkulk",
+        "value": "0",
+        "max": 4
+    },
+    "maneuver": {
+        "label": "COB.SkillsManeuver",
+        "value": "0",
+        "max": 4
+    },
+    "skirmish": {
+        "label": "COB.SkillsSkirmish",
+        "value": "0",
+        "max": 4
+    },
+    "wreck": {
+        "label": "COB.SkillsWreck",
+        "value": "0",
+        "max": 4
+    }
+}
