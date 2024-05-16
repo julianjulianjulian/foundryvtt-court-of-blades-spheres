@@ -1,0 +1,8 @@
+<div class="ability-block" data-ability-id="{{ability._id}}">
+    <input type="checkbox" class="ability-checkbox main-checkbox" id="character-{{actor._id}}-ability-{{ability._id}}-1" {{checked (owns-ability actor ability.name)}}>
+    <label for="character-{{actor._id}}-ability-{{ability._id}}-1">
+        <span class="ability-name {{#if actor.flags.court-of-blades.allow-edit}}{{#unless ability.system.virtual}}clickable-edit{{/unless}}{{/if}}">{{clean-name ability.name}}:</span>
+        <span class="ability-description">{{{md ability.system.description}}}</span>
+    </label>
+    {{#if allow_edit}}{{#if ability.flags.court-of-blades.custom_ability}}<a class="ability-delete delete-button" data-type="ability" data-id="{{ability._id}}"><i class="fas fa-trash"></i></a>{{/if}}{{/if}}
+</div>

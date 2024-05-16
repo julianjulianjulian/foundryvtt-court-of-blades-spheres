@@ -1,0 +1,46 @@
+export const registerSystemSettings = async function() {
+
+  await game.settings.register('court-of-blades', 'populateFromBitdCompendia', {
+    name: 'Load Blades in the Dark Compendium Objects',
+    hint: 'Include Blades in the Dark Compendium Playbooks, NPCs, Items, and Abilities When Auto-Populating Playbooks',
+    scope: 'world',     // "world" = sync to db, "client" = local storage
+    config: true,       // false if you dont want it to show in module config
+    type: Boolean,       // Number, Boolean, String,
+    default: false,
+    onChange: value => { // value is the new value of the setting
+    }
+  });
+
+  await game.settings.register('court-of-blades', 'populateFromCobCompendia', {
+    name: 'Load Court of Blades Compendium Objects',
+    hint: 'Include Court of Blades Compendium Playbooks, NPCs, Items, and Abilities When Auto-Populating Playbooks',
+    scope: 'world',     // "world" = sync to db, "client" = local storage
+    config: true,       // false if you dont want it to show in module config
+    type: Boolean,       // Number, Boolean, String,
+    default: true,
+    onChange: value => { // value is the new value of the setting
+    }
+  });
+
+  await game.settings.register('court-of-blades', 'populateFromOtherCompendia', {
+    name: 'Load Other Compendium Objects',
+    hint: 'Include Other Compendium Playbooks, NPCs, Items, and Abilities When Auto-Populating Playbooks',
+    scope: 'world',     // "world" = sync to db, "client" = local storage
+    config: true,       // false if you dont want it to show in module config
+    type: Boolean,       // Number, Boolean, String,
+    default: false,
+    onChange: value => { // value is the new value of the setting
+    }
+  });
+
+  await game.settings.register('court-of-blades', 'populateFromWorld', {
+    name: 'Load World Objects',
+    hint: 'Include World (Custom) Playbooks, NPCs, Items, and Abilities When Auto-Populating Playbooks',
+    scope: 'world',     // "world" = sync to db, "client" = local storage
+    config: true,       // false if you dont want it to show in module config
+    type: Boolean,       // Number, Boolean, String,
+    default: false,
+    onChange: value => { // value is the new value of the setting
+    }
+  });
+};

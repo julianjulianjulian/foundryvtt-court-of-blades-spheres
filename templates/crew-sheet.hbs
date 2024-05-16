@@ -1,0 +1,218 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <div class="sheet-wrapper {{#if allow_edit}}allow-edit{{/if}}">
+    <div class="sheet-toggles"><span class="toggle-expand"><i class="fas fa-expand"></i><i
+          class="fas fa-compress"></i></span><span class="toggle-allow-edit"><i class="fas fa-lock"></i><i
+          class="fas fa-lock-open"></i></span></div>
+    <section class="minimized-view">
+      <section class="character-portrait">
+        <div class="portrait">
+          <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}">
+        </div>
+        {{!-- <div class="status-buttons">
+          <div class="coins-box {{#if coins_open}}open{{/if}} pointer">
+            <div class="mini-view">
+              <div class="placeholder"></div><span
+                class="coin-values label-text">{{system.coins}}/{{system.coins_stashed}}</span>
+            </div>
+            <div class="full-view">{{> "modules/court-of-blades/templates/parts/coins.hbs" actor=actor}}</div>
+          </div>
+        </div> --}}
+      </section>
+      <div class="name-alias bio">
+        <span class="name">{{{inline-editable-text allow_edit "name" (localize "COB.Actor.Name") actor.name actor._id
+          this}}}</span> {{!-- <span class="alias">&bull; "{{{inline-editable-text allow_edit "system.alias" (localize
+          "COB.Actor.Alias") system.alias actor._id this}}}"</span> --}}
+      </div>
+      {{!-- <div class="heritage-background bio">
+        {{{inline-editable-text allow_edit "system.heritage" (localize "COB.Actor.Heritage") heritage actor._id this}}}
+        &bull; {{{inline-editable-text allow_edit "system.background" (localize "COB.Actor.Background") background
+        actor._id this}}} &bull; {{{inline-editable-text allow_edit "system.background-details" (localize
+        "COB.Actor.BackgroundDetails") system.background-details actor._id this}}} &bull; {{{inline-editable-text
+        allow_edit "system.vice" (localize "COB.Actor.Indulgence") vice actor._id this}}} &bull; {{{inline-editable-text
+        allow_edit "system.vice-purveyor" (localize "COB.Actor.IndulgenceSource") system.vice-purveyor actor._id this}}}
+      </div>
+      <div class="look bio">{{{inline-editable-text allow_edit "system.look" "Look" system.look actor._id this}}}</div> --}}
+     
+      <div class="abilities-list">{{#each my_abilities}}<span data-tooltip="{{clean-html this.system.description}}"
+          class="v10-tooltip">{{clean-name this.name}}</span>&nbsp;{{#unless @last}}-&nbsp;{{/unless}}{{/each}}</div>
+      <section class="attributes-actions">
+        <section class="attribute">
+          <header class="full-bar">
+            <span class="attribute-label">{{localize "COB.Crew.Exposure"}}</span>
+            <div class="stripe-tooth-body right">
+              {{#multiboxes system.heat}}
+              <input type="radio" id="{{actor._id}}-heat-0" name="system.heat" value="0" checked="checked" class="zero">
+              {{#times_from_1 system.heat_max}}
+              <input type="radio" id="character-{{../actor._id}}-heat-{{this}}" name="system.heat" value="{{this}}"
+                dtype="Radio" class="radio-toggle">
+              <label for="character-{{../actor._id}}-heat-{{this}}"
+                class="{{#if (gte ../system.heat @this)}}on{{/if}} radio-toggle"></label>
+              {{/times_from_1}}
+              {{/multiboxes}}
+            </div>
+          </header>
+        </section>
+        <section class="attribute">
+          <header class="full-bar">
+            <span class="context-abilities">{{localize "COB.Crew.Shame"}}</span>
+            <div class="stripe-tooth-body right">
+              {{#multiboxes system.wanted}}
+              <input type="radio" id="{{actor._id}}-wanted-0" name="system.wanted" value="0" checked="checked"
+                class="zero">
+              {{#times_from_1 system.wanted_max}}
+              <input type="radio" id="character-{{../actor._id}}-wanted-{{this}}" name="system.wanted" value="{{this}}"
+                dtype="Radio" class="radio-toggle">
+              <label for="character-{{../actor._id}}-wanted-{{this}}"
+                class="{{#if (gte ../system.wanted @this)}}on{{/if}} radio-toggle"></label>
+              {{/times_from_1}}
+              {{/multiboxes}}
+            </div>
+          </header>
+        </section>
+        <section class="coins-box">
+          <div class="stripe">
+            {{!--<label class="radio-toggle" for="coins-{{actor._id}}-hands-0">{{localize
+              "COB.Actor.Influence"}}</label>--}}
+            <span>{{localize "COB.Actor.Influence"}}</span>
+          </div>
+          <div class="coins coins-hands">
+            {{#multiboxes system.coins}}
+            <input class="radio-toggle" type="radio" id="coins-{{actor._id}}-hands-0" name="system.coins" value="0"
+              checked="checked">
+            <input class="radio-toggle" type="radio" id="coins-{{actor._id}}-hands-1" name="system.coins" value="1">
+            <label class="radio-toggle" for="coins-{{actor._id}}-hands-1"></label>
+            <input class="radio-toggle" type="radio" id="coins-{{actor._id}}-hands-2" name="system.coins" value="2">
+            <label class="radio-toggle" for="coins-{{actor._id}}-hands-2"></label>
+            <input class="radio-toggle" type="radio" id="coins-{{actor._id}}-hands-3" name="system.coins" value="3">
+            <label class="radio-toggle" for="coins-{{actor._id}}-hands-3"></label>
+            <input class="radio-toggle" type="radio" id="coins-{{actor._id}}-hands-4" name="system.coins" value="4">
+            <label class="radio-toggle" for="coins-{{actor._id}}-hands-4"></label>
+            {{/multiboxes}}
+          </div>
+        </section>
+      </section>
+      {{!-- {{> "modules/court-of-blades/templates/parts/attributes.hbs" owner=this.actor}} --}}
+    </section>
+    <section class="tab-space">
+      <nav class="tabs" data-group="primary-tabs">
+        <div class="tab-item crew_type playbook" data-tab="crew_type">
+          {{#if allow_edit}}
+          <div class="playbook-name">{{selected_crew_type.name}}</div>
+          <div class="playbook-description" title="{{localize 'COB.Actor.CrewTypeDisclaimer'}}">{{localize
+            "COB.Actor.CrewTypeInstructions"}}</div>
+          {{else}}
+          <div class="playbook-name">{{selected_crew_type.name}}</div>
+          <div class="playbook-description">{{clean-html selected_crew_type.system.description}}</div>
+          {{/if}}
+        </div>
+        <div class="tab-item notes-tab" data-tab="notes">
+          <div class="notes-header">{{localize "COB.Actor.Notes"}}</div>
+        </div>
+      </nav>
+
+      <section class="tab-content">
+        <div class="tab" data-tab="crew_type" data-group="primary-tabs">
+          <div class="crew_type playbook">
+            <section class="abilities">
+              <header class="full-bar">
+                <span class="context-abilities">{{localize "COB.Actor.Abilities"}}</span>{{#if allow_edit}}<a
+                  class="ability-add-popup add-button" data-item-type="ability" data-group-by="system.class"><i
+                    class="fas fa-plus"></i></a>{{/if}}
+                <div class="stripe-tooth-body right">
+                  {{#multiboxes system.experience}}
+                  <input type="radio" id="{{actor._id}}-experience-0" name="system.experience" value="0"
+                    checked="checked" class="zero">
+                  {{#times_from_1 system.experience_max}}
+                  <input type="radio" id="character-{{../actor._id}}-experience-{{this}}" name="system.experience"
+                    value="{{this}}" dtype="Radio" class="radio-toggle">
+                  <label for="character-{{../actor._id}}-experience-{{this}}"
+                    class="{{#if (gte ../system.experience @this)}}on{{/if}} radio-toggle"></label>
+                  {{/times_from_1}}
+                  {{/multiboxes}}
+                </div>
+              </header>
+              <section class="ability-list check-list">
+                {{#each available_crew_type_abilities as |ability index|}}
+                {{#with ../actor as |actor|}}
+                {{> "modules/court-of-blades/templates/parts/ability.hbs" actor=actor ability=ability
+                allow_edit=../../allow_edit}}
+                {{/with}}
+                {{/each}}
+              </section>
+            </section>
+            <section class="playbook-items item-list">
+              <header class="full-bar flex-header context-items"><span>{{localize "COB.Crew.Upgrades"}}</span>{{#if
+                allow_edit}}<a class="item-list-add add-button" data-item-type="item" data-group-by="system.class"><i
+                    class="fas fa-plus"></i></a>{{/if}}</header>
+              {{#each my_items as |item index|}}
+              {{#with ../actor as |actor|}}
+              {{> "modules/court-of-blades/templates/parts/item.hbs" actor=actor item=item}}
+              {{/with}}
+              {{/each}}
+            </section>
+            {{!-- <section class="friends-rivals">
+              <header class="full-bar">{{localize "COB.Actor.Contacts"}}</header>
+              {{#if system.acquaintances}}
+              {{#each system.acquaintances}}
+              <div class="acquaintance" data-acquaintance="{{this.id}}">
+                <i data-acquaintance="{{this.id}}" class="standing-toggle fas
+                    {{#if (eq this.standing " friend")}} fa-caret-up green-icon {{else if (eq this.standing "rival" )}}
+                  fa-caret-down red-icon {{else}} fa-minus {{/if}}"></i><strong
+                  class="standing-toggle">{{this.name}}</strong>{{#if (notempty this.description_short)}},
+                {{this.description_short}}{{/if}}
+              </div>
+              {{/each}}
+              {{/if}}
+            </section> --}}
+            <section class="all-items item-list">
+              <header class="full-bar">&nbsp;</header>
+              {{#each generic_items as |item index|}}
+              {{#with ../actor as |actor|}}
+              {{> "modules/court-of-blades/templates/parts/item.hbs" actor=actor item=item}}
+              {{/with}}
+              {{/each}}
+            </section>
+            <section class="xp-notes">
+              <header class="full-bar">XP</header>
+              <ul>
+                <li>{{localize "COB.Actor.ExperienceTriggers.Desperate"}}</li>
+                <p>{{localize "COB.Actor.ExperienceTriggers.Description"}}</p>
+                <li>{{selected_crew_type.system.experience_clues}}</li>
+                <li>{{localize "COB.Actor.ExperienceTriggers.Drives"}}</li>
+                <li>{{localize "COB.Actor.ExperienceTriggers.Struggles"}}</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <div class="tab" data-tab="notes" data-group="primary-tabs">
+          <div class="character-notes-area">
+
+
+            <header>{{localize "COB.Actor.NotesInstructions"}}</header>
+            {{editor notes target="flags.court-of-blades.notes" button=true editable=true documents=true
+            engine="prosemirror" collaborate=true}}
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+  {{#if isGM}}
+  <i class="fas fa-bug debug-toggle {{#if show_debug}}on{{/if}} "></i>
+  {{#if show_debug}}
+  {{!-- {{> "modules/court-of-blades/templates/parts/active-effects.hbs"}}</div> --}}
+  <hr />
+  <h3>All Items</h3>
+  {{#each actor.items as |item id|}}
+  <div class="item flex-horizontal" data-item-id="{{item._id}}">
+    <div class="item-body item-sheet-open flex-horizontal">
+      <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
+      <div class="item-name">{{item.name}}</div>
+    </div>
+    <a class="item-control item-delete" title="{{localize 'COB.Actor.ItemAction.Delete'}}"><i
+        class="fas fa-trash"></i></a>
+  </div>
+  {{/each}}
+  <button class="clearLoad">Clear Load</button>
+  {{/if}}
+  {{/if}}
+</form>

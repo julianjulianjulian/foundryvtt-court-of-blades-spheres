@@ -1,0 +1,23 @@
+<form class="{{cssClass}}" autocomplete="off">
+    {{> "modules/court-of-blades/templates/parts/item-header.hbs"}}
+    <section class="flex-vertical">
+        <section>
+        <h3>{{localize "bitd-alt.StartingSkills"}}</h3>
+        {{> "modules/court-of-blades/templates/parts/attributes.hbs" owner=this.item isitem=true attributes=attributes}}
+        </section>
+        <section>
+        <header><label>{{localize "BITD.Description"}}</label></header>
+        <input type="text" class="item_field" name="system.description" value="{{description}}" />
+        <!-- {{editor system.description target="system.description" button=true editable=editable engine="prosemirror"}} -->
+        </section>
+        <section>
+        <header><label>{{localize "BITD.ExpClues"}}</label></header>
+        <input type="text" class="item_field" name="system.experience_clues" value="{{experience_clues}}" />
+        </section>
+        <!-- {{editor system.experience_clues target="system.experience_clues" button=true editable=editable engine="prosemirror"}} -->
+
+    {{#if isGM}}
+        {{> "modules/court-of-blades/templates/parts/active-effects.hbs"}}</div>
+    {{/if}}
+    </section>
+</form>
