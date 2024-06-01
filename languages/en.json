@@ -97,8 +97,19 @@
       "Stress": "Stress"
     },
     "Crew": {
+      "ExperienceTriggers": {
+        "Description": "At the end of each session, for each item below, mark 1 xp (on your house sheet), for a maximum of 4 xp.",
+        "Drives": "You expressed the goals, drives, inner conflict, or essential nature of the Coterie.",
+        "Reputation": "You bolstered your coterie's reputation or developed a new one.",
+        "Station": "You contended with challenges above your station."
+      },
       "Exposure": "Exposure",
+      "Healer": "Healer",
+      "HealerType": "Healer Type",
+      "Name": "Coterie Name",
+      "Reputation": "Reputations",
       "Shame": "Shame",
+      "Strengths": "Strengths",
       "Upgrades": "Upgrades"
     },
     "System": {

@@ -8,31 +8,18 @@
         <div class="portrait">
           <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}">
         </div>
-        {{!-- <div class="status-buttons">
-          <div class="coins-box {{#if coins_open}}open{{/if}} pointer">
-            <div class="mini-view">
-              <div class="placeholder"></div><span
-                class="coin-values label-text">{{system.coins}}/{{system.coins_stashed}}</span>
-            </div>
-            <div class="full-view">{{> "modules/court-of-blades/templates/parts/coins.hbs" actor=actor}}</div>
-          </div>
-        </div> --}}
       </section>
       <div class="name-alias bio">
-        <span class="name">{{{inline-editable-text allow_edit "name" (localize "COB.Actor.Name") actor.name actor._id
-          this}}}</span> {{!-- <span class="alias">&bull; "{{{inline-editable-text allow_edit "system.alias" (localize
-          "COB.Actor.Alias") system.alias actor._id this}}}"</span> --}}
+        <span class="name">{{{inline-editable-text allow_edit "name" (localize "COB.Crew.Name") actor.name actor._id
+          this}}}</span> 
       </div>
-      {{!-- <div class="heritage-background bio">
-        {{{inline-editable-text allow_edit "system.heritage" (localize "COB.Actor.Heritage") heritage actor._id this}}}
-        &bull; {{{inline-editable-text allow_edit "system.background" (localize "COB.Actor.Background") background
-        actor._id this}}} &bull; {{{inline-editable-text allow_edit "system.background-details" (localize
-        "COB.Actor.BackgroundDetails") system.background-details actor._id this}}} &bull; {{{inline-editable-text
-        allow_edit "system.vice" (localize "COB.Actor.Indulgence") vice actor._id this}}} &bull; {{{inline-editable-text
-        allow_edit "system.vice-purveyor" (localize "COB.Actor.IndulgenceSource") system.vice-purveyor actor._id this}}}
+      <div class="heritage-background bio">
+        {{{inline-editable-text allow_edit "system.strength" (localize "COB.Crew.Strengths") system.strength actor._id this}}}
+        &bull; {{{inline-editable-text allow_edit "system.reputation" (localize "COB.Crew.Reputation") system.reputation
+        actor._id this}}} &bull; {{{inline-editable-text
+        allow_edit "system.healer" (localize "COB.Crew.Healer") system.healer actor._id this}}} &bull; {{{inline-editable-text
+        allow_edit "system.healer-type" (localize "COB.Crew.HealerType") system.healer-type actor._id this}}}
       </div>
-      <div class="look bio">{{{inline-editable-text allow_edit "system.look" "Look" system.look actor._id this}}}</div> --}}
-     
       <div class="abilities-list">{{#each my_abilities}}<span data-tooltip="{{clean-html this.system.description}}"
           class="v10-tooltip">{{clean-name this.name}}</span>&nbsp;{{#unless @last}}-&nbsp;{{/unless}}{{/each}}</div>
       <section class="attributes-actions">
@@ -175,19 +162,17 @@
             <section class="xp-notes">
               <header class="full-bar">XP</header>
               <ul>
-                <li>{{localize "COB.Actor.ExperienceTriggers.Desperate"}}</li>
-                <p>{{localize "COB.Actor.ExperienceTriggers.Description"}}</p>
+                <p>{{localize "COB.Crew.ExperienceTriggers.Description"}}</p>
                 <li>{{selected_crew_type.system.experience_clues}}</li>
-                <li>{{localize "COB.Actor.ExperienceTriggers.Drives"}}</li>
-                <li>{{localize "COB.Actor.ExperienceTriggers.Struggles"}}</li>
+                <li>{{localize "COB.Crew.ExperienceTriggers.Station"}}</li>
+                <li>{{localize "COB.Crew.ExperienceTriggers.Reputation"}}</li>
+                <li>{{localize "COB.Crew.ExperienceTriggers.Drives"}}</li>
               </ul>
             </section>
           </div>
         </div>
         <div class="tab" data-tab="notes" data-group="primary-tabs">
           <div class="character-notes-area">
-
-
             <header>{{localize "COB.Actor.NotesInstructions"}}</header>
             {{editor notes target="flags.court-of-blades.notes" button=true editable=true documents=true
             engine="prosemirror" collaborate=true}}

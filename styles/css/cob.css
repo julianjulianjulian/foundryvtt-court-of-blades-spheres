@@ -27,6 +27,8 @@
 /*
  * Custom Radio Round
  */
+
+/* FIXME RPG Dark UI currently has styling for blades-alt which will not apply to court of blades */
 .court-of-blades {
   font-family: "Crimson Text", serif;
 }
@@ -1762,6 +1764,64 @@
 /*                                 Crew sheet                                 */
 /* -------------------------------------------------------------------------- */
 
+/* ----------------------- Minimized view organization ---------------------- */
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view {
+  display: grid;
+  height: 185px;
+  grid-template-columns: auto 1fr;
+  column-gap: 1em;
+  grid-template-rows: 2fr 1fr 1fr 4fr;
+  grid-template-areas: "portrait main-row" "portrait sub-row-1" "portrait sub-row-2" "portrait actions";
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .character-portrait {
+  grid-area: portrait;
+  place-self: center;
+  width: 170px;
+  height: 170px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  position: relative;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .character-portrait .portrait {
+  border-radius: 100px;
+  overflow: hidden;
+  border: 6px solid #999;
+  width: 100% !important; /* FIXME reconcile with Dark UI, remove important!*/
+  height: 100% !important; /* FIXME reconcile with Dark UI, remove important!*/
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .name-alias {
+  font-family: Kirsty, serif;
+  font-weight: bold;
+  font-size: 3em;
+  color: #191813;
+  grid-area: main-row;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .heritage-background {
+  grid-area: sub-row-1;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .abilities-list {
+  grid-area: sub-row-2;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .attributes-actions {
+  grid-area: actions;
+}
+
+/* --------------------------- Exposure and Shame --------------------------- */
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .attributes-actions .attribute {
+  flex-grow: 1;
+  margin: 25px 5px 10px 5px;
+}
+
 /* -------------------------------- Influence ------------------------------- */
 .court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box {
   max-width: 100px;
@@ -1774,39 +1834,16 @@
   font-family: Kirsty, serif;
   text-align: center;
   z-index: 600;
+  margin-top: 20px;
 }
-
-/* .court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box {
-  display: none;
-} */
 
 .court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open {
   color: #191813;
 }
 
-/*.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open {
-  background-color: #bbb;
-  border: 3px solid #666;
-  display: block;
-  padding: 5px;
-  border-radius: 5px;
-  text-align: center;
-  position: absolute;
-  top: -10px;
-  left: 100%;
-  width: 250px;
-  box-shadow: 0px 7px 6px 0px rgba(0, 0, 0, 0.25);
-}*/
-
 .court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box>div {
   display: inline-block;
 }
-
-/*.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .mini-view {
-  background-repeat: no-repeat;
-  background-image: url(assets/icons/coins.png);
-  background-size: contain;
-}*/
 
 .court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins {
   display: flex;
