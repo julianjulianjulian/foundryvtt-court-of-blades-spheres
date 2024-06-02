@@ -49,10 +49,12 @@ export class CourtOfBladesCrewSheet extends CourtOfBladesSheet {
     sheetData.system.tier_max = "6";
 
     // Crew-specific parameters
-    sheetData.system.strength = "";
-    sheetData.system.healer = "";
-    sheetData.system["healer-type"] = "";
-    sheetData.system.reputation = "";
+    if (!("strength" in sheetData.system)) {
+      sheetData.system.strength = "";
+      sheetData.system.healer = "";
+      sheetData.system["healer-type"] = "";
+      sheetData.system.reputation = "";
+    }
 
     /* ---------------------------------- Notes --------------------------------- */
     // Displaying clocks in notes
