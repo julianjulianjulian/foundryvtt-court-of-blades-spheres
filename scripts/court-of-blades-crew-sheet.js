@@ -319,7 +319,7 @@ export class CourtOfBladesCrewSheet extends CourtOfBladesSheet {
       classes: ["court-of-blades", "sheet", "crew", "actor"], // TODO remove pc class
       template: "modules/court-of-blades/templates/crew-sheet.hbs",
       width: 800,
-      height: auto,
+      height: "auto",
       tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "crew_type" }]
     });
   }
