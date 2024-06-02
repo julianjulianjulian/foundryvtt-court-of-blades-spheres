@@ -291,10 +291,10 @@ export class CourtOfBladesCrewSheet extends CourtOfBladesSheet {
     // TODO bring these back?
     /* html.find(".effect-control").click(ev => BladesActiveEffect.onManageActiveEffect(ev, this.actor));
  */
-    // TODO does this do anything?
+    /* ----------------------------- Minimize button ---------------------------- */
     html.find(".toggle-expand").click(ev => {
       if (!this._element.hasClass("can-expand")) {
-        this.setPosition({ height: 275 });
+        this.setPosition({ height: 225 });
         this._element.addClass("can-expand");
       }
       else {
@@ -316,7 +316,7 @@ export class CourtOfBladesCrewSheet extends CourtOfBladesSheet {
    */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["court-of-blades", "sheet", "crew", "pc", "actor"], // TODO remove pc class
+      classes: ["court-of-blades", "sheet", "crew", "actor"], // TODO remove pc class
       template: "modules/court-of-blades/templates/crew-sheet.hbs",
       width: 800,
       height: 1200,

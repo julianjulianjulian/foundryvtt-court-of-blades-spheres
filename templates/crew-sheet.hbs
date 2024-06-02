@@ -9,11 +9,11 @@
           <img src="{{actor.img}}" data-edit="img" title="{{actor.name}}">
         </div>
       </section>
-      <div class="name-alias bio">
+      <div class="name-alias">
         <span class="name">{{{inline-editable-text allow_edit "name" (localize "COB.Crew.Name") actor.name actor._id
           this}}}</span> 
       </div>
-      <div class="heritage-background bio">
+      <div class="heritage-background">
         {{{inline-editable-text allow_edit "system.strength" (localize "COB.Crew.Strengths") system.strength actor._id this}}}
         &bull; {{{inline-editable-text allow_edit "system.reputation" (localize "COB.Crew.Reputation") system.reputation
         actor._id this}}} &bull; {{{inline-editable-text
@@ -22,10 +22,10 @@
       </div>
       <div class="abilities-list">{{#each my_abilities}}<span data-tooltip="{{clean-html this.system.description}}"
           class="v10-tooltip">{{clean-name this.name}}</span>&nbsp;{{#unless @last}}-&nbsp;{{/unless}}{{/each}}</div>
-      <section class="attributes-actions">
-        <section class="attribute">
+      <section class="exposure-shame">
+        <section class="exposure">
           <header class="full-bar">
-            <span class="attribute-label">{{localize "COB.Crew.Exposure"}}</span>
+            <span class="exposure-label">{{localize "COB.Crew.Exposure"}}</span>
             <div class="stripe-tooth-body right">
               {{#multiboxes system.heat}}
               <input type="radio" id="{{actor._id}}-heat-0" name="system.heat" value="0" checked="checked" class="zero">
@@ -39,9 +39,9 @@
             </div>
           </header>
         </section>
-        <section class="attribute">
+        <section class="shame">
           <header class="full-bar">
-            <span class="context-abilities">{{localize "COB.Crew.Shame"}}</span>
+            <span class="shame-label">{{localize "COB.Crew.Shame"}}</span>
             <div class="stripe-tooth-body right">
               {{#multiboxes system.wanted}}
               <input type="radio" id="{{actor._id}}-wanted-0" name="system.wanted" value="0" checked="checked"
@@ -58,8 +58,6 @@
         </section>
         <section class="coins-box">
           <div class="stripe">
-            {{!--<label class="radio-toggle" for="coins-{{actor._id}}-hands-0">{{localize
-              "COB.Actor.Influence"}}</label>--}}
             <span>{{localize "COB.Actor.Influence"}}</span>
           </div>
           <div class="coins coins-hands">
@@ -78,7 +76,6 @@
           </div>
         </section>
       </section>
-      {{!-- {{> "modules/court-of-blades/templates/parts/attributes.hbs" owner=this.actor}} --}}
     </section>
     <section class="tab-space">
       <nav class="tabs" data-group="primary-tabs">

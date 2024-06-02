@@ -29,71 +29,14 @@
  */
 
 /* FIXME RPG Dark UI currently has styling for blades-alt which will not apply to court of blades */
+
+/* -------------------------------------------------------------------------- */
+/*                                   General                                  */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------- Fonts and text styles ------------------------- */
 .court-of-blades {
   font-family: "Crimson Text", serif;
-}
-
-.court-of-blades textarea {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.court-of-blades .debug-toggle {
-  opacity: 0.1;
-}
-
-.court-of-blades .debug-toggle.on {
-  opacity: 0.75;
-}
-
-.court-of-blades .pointer {
-  cursor: pointer;
-}
-
-.court-of-blades section.flex {
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.court-of-blades section.flex>*:not(.label-stripe) {
-  margin-right: 10px;
-}
-
-.court-of-blades section.flex>*:not(.label-stripe):last-child {
-  margin-right: 0px;
-}
-
-.court-of-blades section.flex .grow-one {
-  flex-grow: 1;
-}
-
-.court-of-blades section.flex .grow-two {
-  flex-grow: 2;
-}
-
-.court-of-blades section.flex.experience {
-  margin-bottom: 0px;
-  justify-content: center;
-}
-
-.court-of-blades .tab[data-tab] {
-  display: none;
-}
-
-.court-of-blades .tab[data-tab].active {
-  display: block;
-}
-
-.court-of-blades .flex-horizontal {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.court-of-blades .flex-vertical {
-  display: flex;
-  flex-direction: column;
 }
 
 .court-of-blades .black-label {
@@ -141,25 +84,70 @@
   font-weight: bold;
 }
 
+.court-of-blades .description {
+  font-style: italic;
+}
+
+/* --------------------------------- Spacing -------------------------------- */
+
+.court-of-blades textarea {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.court-of-blades .debug-toggle {
+  opacity: 0.1;
+}
+
+.court-of-blades .debug-toggle.on {
+  opacity: 0.75;
+}
+
+
+.court-of-blades section.flex {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.court-of-blades section.flex>*:not(.label-stripe) {
+  margin-right: 10px;
+}
+
+.court-of-blades section.flex>*:not(.label-stripe):last-child {
+  margin-right: 0px;
+}
+
+.court-of-blades section.flex .grow-one {
+  flex-grow: 1;
+}
+
+.court-of-blades section.flex .grow-two {
+  flex-grow: 2;
+}
+
+.court-of-blades section.flex.experience {
+  margin-bottom: 0px;
+  justify-content: center;
+}
+
+.court-of-blades .flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.court-of-blades .flex-vertical {
+  display: flex;
+  flex-direction: column;
+}
+
 .court-of-blades .editor,
 .court-of-blades .editor-content {
   min-height: 150px;
 }
 
-.court-of-blades .description {
-  font-style: italic;
-}
-
-.court-of-blades i.nullifier {
-  transition: filter 0.2s;
-  cursor: pointer;
-}
-
-.court-of-blades i.nullifier:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-  color: red;
-}
+/* --------------------------------- Loadout -------------------------------- */
 
 .court-of-blades #loadout select {
   appearance: none;
@@ -211,100 +199,174 @@
   padding: 5px;
 }
 
-/*
-* General Styles - Redesign
-*/
+/* ---------------------------------- Other --------------------------------- */
 
-.court-of-blades.actor.sheet.pc {
-  min-width: 800px;
-  min-height: 275px;
+.court-of-blades .tab[data-tab] {
+  display: none;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper {
+.court-of-blades .tab[data-tab].active {
+  display: block;
+}
+
+.court-of-blades .pointer {
+  cursor: pointer;
+}
+
+.court-of-blades i.nullifier {
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+
+.court-of-blades i.nullifier:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+  color: red;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                          Character and crew sheets                         */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- General -------------------------------- */
+
+/* Permissions */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .edit-only {
+  display: none;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .non-edit {
+  display: initial;
+}
+
+/* Fonts */
+.court-of-blades.actor.sheet.pc .sheet-wrapper,
+.court-of-blades.actor.sheet.crew .sheet-wrapper {
   position: relative;
   margin: 5px;
   font-family: "Crimson Text", serif;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper input[type=checkbox] {
+/* Checkboxes */
+.court-of-blades.actor.sheet.pc .sheet-wrapper input[type=checkbox],
+.court-of-blades.actor.sheet.crew .sheet-wrapper input[type=checkbox] {
   width: 1em;
   height: 1em;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .rollable-text {
+/* Rollable text (e.g., attributes) */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .rollable-text,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .rollable-text {
   transition: color 0.2s;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .rollable-text:hover {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .rollable-text:hover,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .rollable-text:hover {
   cursor: pointer;
   color: red;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper a.add-button {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .rollable-text,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .rollable-text {
+  cursor: pointer;
+}
+
+/* Add/delete buttons */
+.court-of-blades.actor.sheet.pc .sheet-wrapper a.add-button,
+.court-of-blades.actor.sheet.crew .sheet-wrapper a.add-button {
   margin-left: 5px;
   font-size: 0.9rem;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper a.delete-button {
+.court-of-blades.actor.sheet.pc .sheet-wrapper a.delete-button,
+.court-of-blades.actor.sheet.crew .sheet-wrapper a.delete-button {
   position: absolute;
   right: 5px;
   top: 2px;
   font-size: 0.6rem;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper [contenteditable]:not(.ProseMirror) {
+/* Editable fields */
+.court-of-blades.actor.sheet.pc .sheet-wrapper [contenteditable]:not(.ProseMirror),
+.court-of-blades.actor.sheet.crew .sheet-wrapper [contenteditable]:not(.ProseMirror) {
   user-select: auto !important;
   text-decoration: underline;
 }
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper [contenteditable]:not(.ProseMirror):active,
-.court-of-blades.actor.sheet.pc .sheet-wrapper [contenteditable]:not(.ProseMirror):focus {
+.court-of-blades.actor.sheet.pc .sheet-wrapper [contenteditable]:not(.ProseMirror):focus,
+.court-of-blades.actor.sheet.crew .sheet-wrapper [contenteditable]:not(.ProseMirror):active,
+.court-of-blades.actor.sheet.crew .sheet-wrapper [contenteditable]:not(.ProseMirror):focus {
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-radius: 3px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .linkedClock {
-  display: inline-block;
-  text-align: center;
-  margin: 1em;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .clockImage {
-  width: 100px;
-  border: none;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .editor {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .editor,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .editor {
   background-color: rgba(255, 255, 255, 0.2);
   padding: 0.5em;
   height: auto;
   flex-grow: 1;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .editor.prosemirror {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .editor.prosemirror,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .editor.prosemirror {
   height: 100%;
   padding: auto;
 }
 
+.court-of-blades.actor.sheet.pc .sheet-wrapper .clickable-edit,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .clickable-edit {
+  text-decoration: underline;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper input[type=text],
+.court-of-blades.actor.sheet.crew .sheet-wrapper input[type=text] {
+  width: auto;
+  border: 0;
+}
+
+/* Embedded clocks */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .linkedClock,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .linkedClock {
+  display: inline-block;
+  text-align: center;
+  margin: 1em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .clockImage,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .clockImage {
+  width: 100px;
+  border: none;
+}
+
+/* Tooltips */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .hover-details,
 .court-of-blades.actor.sheet.pc .sheet-wrapper .hover-term,
-.court-of-blades.actor.sheet.pc .sheet-wrapper .v10-tooltip {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .v10-tooltip,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .hover-details,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .hover-term,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .v10-tooltip {
   cursor: help;
   color: #660000;
   font-weight: bold;
   text-decoration: underline;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper ul.diamond {
+/* Bullet points */
+.court-of-blades.actor.sheet.pc .sheet-wrapper ul.diamond,
+.court-of-blades.actor.sheet.crew .sheet-wrapper ul.diamond {
   list-style: none;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper ul.diamond li {
+.court-of-blades.actor.sheet.pc .sheet-wrapper ul.diamond li,
+.court-of-blades.actor.sheet.crew .sheet-wrapper ul.diamond li {
   position: relative;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper ul.diamond li:after {
+.court-of-blades.actor.sheet.pc .sheet-wrapper ul.diamond li:after,
+.court-of-blades.actor.sheet.crew .sheet-wrapper ul.diamond li:after {
   content: "";
   height: 0.4em;
   width: 0.4em;
@@ -316,6 +378,8 @@
   left: -1em;
 }
 
+/* ------------------------------ Item dialogs ------------------------------ */
+/* Add item */
 .add-existing-dialog .items-list {
   display: flex;
   flex-wrap: wrap;
@@ -339,32 +403,14 @@
   color: #EEEFFF;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper #context-menu ol li * {
+.court-of-blades.actor.sheet.pc .sheet-wrapper #context-menu ol li *,
+.court-of-blades.actor.sheet.crew .sheet-wrapper #context-menu ol li * {
   vertical-align: initial;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .clickable-edit {
-  text-decoration: underline;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .rollable-text {
-  cursor: pointer;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper input[type=text] {
-  width: auto;
-  border: 0;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .edit-only {
-  display: none;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .non-edit {
-  display: initial;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar {
+/* ---------------------------- Headers and teeth --------------------------- */
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar {
   background-color: #191813;
   color: #EEEFFF;
   padding: 3px;
@@ -376,15 +422,16 @@
   line-height: 1em;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right {
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right {
   position: absolute;
   top: 1px;
   right: 1px;
   display: flex;
-  /* Hide the browser's default checkbox */
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label {
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right label {
   height: 25px;
   width: 10px;
   background-image: url("assets/teeth/xptooth-red.png");
@@ -395,115 +442,79 @@
   cursor: pointer;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label:last-of-type {
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label:last-of-type,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right label:last-of-type {
   margin-right: 0px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label[for$="-0"] {
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label[for$="-0"],
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right label[for$="-0"] {
   width: auto;
   height: auto;
   background-image: none !important;
   color: #EEEFFF;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label[for$="-0"] i {
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label[for$="-0"] i,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right label[for$="-0"] i {
   margin-top: 4px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label:hover {
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label:hover,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right label:hover {
   filter: brightness(0.8);
   opacity: 0.9;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right input {
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right input,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right input {
   display: none;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label {
+/* TODO is this necessary? */
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right label {
   background-image: url("assets/teeth/xptooth-white.png");
   background-size: 100% 100%;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label.on {
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.right label.on,
+.court-of-blades.actor.sheet.crew .sheet-wrapper header.full-bar .stripe-tooth-body.right label.on {
   background-image: url("assets/teeth/xptooth-red.png");
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress {
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  display: flex;
-  /* Hide the browser's default checkbox */
-}
+/* --------------------------------- Toggles -------------------------------- */
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label {
-  height: 25px;
-  width: 10px;
-  background-image: url("assets/teeth/xptooth-red.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 3px;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label:last-of-type {
-  margin-right: 0px;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label[for$="-0"] {
-  width: auto;
-  height: auto;
-  background-image: none !important;
-  color: #EEEFFF;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label[for$="-0"] i {
-  margin-top: 4px;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress input {
-  display: none;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label {
-  background-image: url("assets/teeth/xptooth-white.png");
-  background-size: 100% 100%;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label.on {
-  background-image: url("assets/teeth/xptooth-red.png");
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles {
   position: absolute;
   top: -10px;
   right: -10px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles>span {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles>span,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles>span {
   display: inline-block;
   padding: 4px;
   margin: 0 5px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-expand {
+/* Minimize toggle */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-expand,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles span.toggle-expand {
   background: #0058cc;
   color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
   border-radius: 3px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-expand .fa-expand {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-expand .fa-expand,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles span.toggle-expand .fa-expand {
   display: none;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-expand .fa-compress {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-expand .fa-compress,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles span.toggle-expand .fa-compress {
   display: initial;
 }
 
@@ -515,39 +526,339 @@
   display: none !important;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-allow-edit {
+/* Edit toggle */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-allow-edit,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles span.toggle-allow-edit {
   cursor: pointer;
   background: #008000;
   color: rgba(255, 255, 255, 0.6);
   border-radius: 3px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-allow-edit:hover {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-allow-edit:hover,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles span.toggle-allow-edit:hover {
   color: #fff;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-allow-edit i {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-allow-edit i,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles span.toggle-allow-edit i {
   width: 100%;
   text-align: center;
   padding: 4px 6px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-allow-edit .fa-lock-open {
+.court-of-blades.actor.sheet.pc .sheet-wrapper .sheet-toggles span.toggle-allow-edit .fa-lock-open,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .sheet-toggles span.toggle-allow-edit .fa-lock-open {
   display: none;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit {
+.court-of-blades.actor.sheet.pc .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit,
+.court-of-blades.actor.sheet.crew .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit {
   background-color: #800000;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit .fa-lock-open {
+.court-of-blades.actor.sheet.pc .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit .fa-lock-open,
+.court-of-blades.actor.sheet.crew .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit .fa-lock-open {
   display: inline-block;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit .fa-lock {
+.court-of-blades.actor.sheet.pc .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit .fa-lock,
+.court-of-blades.actor.sheet.crew .sheet-wrapper.allow-edit .sheet-toggles .toggle-allow-edit .fa-lock {
   display: none;
 }
 
+/* -------------------------------- Main body ------------------------------- */
+/* Tabs */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space nav.tabs,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space nav.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 1em;
+  grid-template-rows: auto;
+  grid-template-areas: "tab1 tab2 ";
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-item {
+  flex-grow: 0;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #bbb;
+  border-radius: 20px 20px 0 0;
+  font-family: Kirsty, serif;
+  text-transform: capitalize;
+  padding: 5px 15px;
+  font-size: 2.6em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item select,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-item select {
+  font-family: Kirsty;
+  font-size: 1em;
+  height: 80%;
+  position: relative;
+  top: -6px;
+  left: 2px;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item>div,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-item>div {
+  margin: 5px 10px;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item.active,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-item.active {
+  margin-bottom: 0;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item:not(.active),
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-item:not(.active) {
+  background-color: rgba(187, 187, 187, 0.5);
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content {
+  flex-basis: 100%;
+}
+
+/* -------------------------------- Playbook -------------------------------- */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item.playbook,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-item.playbook {
+  grid-area: tab1;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item .playbook-description,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-item .playbook-description {
+  font-family: "Crimson Text", serif;
+  font-size: 0.4em;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #666;
+  text-align: center;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook {
+  display: grid;
+  align-items: stretch;
+  justify-items: stretch;
+  grid-template-columns: 2fr 1em 1fr 1fr;
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas: "abilities gutter pb-items all-items" "abilities gutter friends all-items" "abilities gutter xp-notes xp-notes";
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook select,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook select {
+  font-family: Kirsty, serif;
+  text-transform: capitalize;
+  font-size: 2.6em;
+  border: none;
+  background-color: #f00;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook::after,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook::after {
+  content: "";
+  background: #bbb;
+  grid-area: gutter;
+  height: 100%;
+  width: 100%;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook section,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook section {
+  padding-bottom: 0.75em;
+}
+
+/* Abilities */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities {
+  grid-area: abilities;
+  background: #bbb;
+  padding-bottom: 1em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  padding: 5px;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block:nth-child(even),
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block input,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block input {
+  margin: 0;
+  margin-right: 3px;
+  position: relative;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block input.offset,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block input.offset {
+  margin-top: -3px;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label {
+  margin: 0;
+  line-height: 0.8em;
+  font-size: 1.2em;
+  margin-bottom: 6px;
+  padding-right: 1em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label .ability-name,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label .ability-name {
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label .ability-description p,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label .ability-description p {
+  display: inline;
+}
+
+/* Gear and Upgrades */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .playbook-items,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .playbook-items {
+  grid-area: pb-items;
+  background: #bbb;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list {
+  font-size: 1.2em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .free-item,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .free-item {
+  font-style: italic;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block {
+  padding: 2px 5px;
+  position: relative;
+  line-height: 0;
+}
+
+.allow-edit .item-block:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .checkbox,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .checkbox {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .item-name,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .item-name {
+  width: 100%;
+  position: relative;
+  line-height: 1em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .join-line,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .join-line {
+  border: 1px solid #666;
+  width: 1em;
+  display: inline-block;
+  height: 0px;
+  margin: 0 -0.5em;
+  top: calc(-0.5em + 5px);
+  position: relative;
+  z-index: 0;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block input,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block input {
+  margin-left: 0;
+  position: relative;
+  z-index: 10;
+  bottom: 0px;
+}
+
+/* XP hints */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes {
+  grid-area: xp-notes;
+  background: #bbb;
+  font-size: 1.2em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes p,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes p {
+  line-height: 1em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes ul,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes ul {
+  list-style-type: square;
+  padding-right: 5px;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes ul li,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes ul li {
+  font-style: italic;
+}
+
+
+/* All items (debug) */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .all-items,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook .all-items {
+  grid-area: all-items;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook header.full-bar,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .playbook header.full-bar {
+  background-color: #666;
+  color: #EEEFFF;
+}
+
+/* ---------------------------------- Notes --------------------------------- */
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item.notes,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-item.notes {
+  grid-area: tab2;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .character-notes-area,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .character-notes-area {
+  background-color: #bbb;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 1.2em;
+  min-height: 650px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .character-notes-area header,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .tab-space .tab-content .tab .character-notes-area header {
+  font-size: 0.9em;
+  flex-grow: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Character sheet                              */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- Sizing --------------------------------- */
+.court-of-blades.actor.sheet.pc {
+  min-width: 800px;
+  min-height: 275px;
+}
+
+/* ----------------------------- Minimized view ----------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view {
   display: grid;
   height: 235px;
@@ -557,6 +868,7 @@
   grid-template-areas: "portrait main-row" "portrait sub-row-1" "portrait sub-row-2" "portrait sub-row-3" "portrait actions";
 }
 
+/* -------------------------------- Portrait -------------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .character-portrait {
   grid-area: portrait;
   place-self: center;
@@ -587,6 +899,7 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) inset;
 }
 
+/* ----------------------------- Status buttons ----------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .character-portrait .status-buttons {
   position: absolute;
   top: 15px;
@@ -610,6 +923,7 @@
   margin-bottom: 20px;
 }
 
+/* ------------------------- Status buttons - coins ------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .character-portrait .status-buttons .coins-box {
   max-width: 30px;
   max-height: 30px;
@@ -679,7 +993,6 @@
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .character-portrait .status-buttons .coins-box .full-view .coins {
   display: flex;
-  /* Hide the browser's default checkbox */
   flex-wrap: wrap;
 }
 
@@ -749,6 +1062,7 @@
   text-align: left;
 }
 
+/* -------------------------- Status buttons - harm ------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .character-portrait .status-buttons .harm-box {
   max-width: 30px;
   max-height: 30px;
@@ -1014,6 +1328,7 @@
   z-index: 1;
 }
 
+/* -------------------------- Status buttons - load ------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .character-portrait .status-buttons .load-box {
   max-width: 30px;
   max-height: 30px;
@@ -1093,6 +1408,7 @@
   color: #660000;
 }
 
+/* ------------------------- Status buttons - trauma ------------------------ */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .character-portrait .stress-trauma-box {
   width: 100%;
   height: 2em;
@@ -1139,6 +1455,7 @@
   font-size: 1em;
 }
 
+/* -------------------------- Name and description -------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .name-alias {
   font-family: Kirsty, serif;
   font-weight: bold;
@@ -1168,6 +1485,7 @@
   grid-area: sub-row-3;
 }
 
+/* ------------------------------- Attributes ------------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .attributes-actions {
   grid-area: actions;
 }
@@ -1198,6 +1516,11 @@
   margin: 0 5px 10px 5px;
 }
 
+.court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .attributes-actions .attribute input.zero {
+  display: none;
+}
+
+/* Skills */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .attributes-actions .attribute .action {
   padding: 0 5px;
   display: flex;
@@ -1280,199 +1603,60 @@
   top: -3px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .attributes-actions .attribute input.zero {
+/* --------------------------------- Stress --------------------------------- */
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  display: flex;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label {
+  height: 25px;
+  width: 10px;
+  background-image: url("assets/teeth/xptooth-red.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 3px;
+  transition: filter 0.1s;
+  cursor: pointer;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label:last-of-type {
+  margin-right: 0px;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label[for$="-0"] {
+  width: auto;
+  height: auto;
+  background-image: none !important;
+  color: #EEEFFF;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label[for$="-0"] i {
+  margin-top: 4px;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress input {
   display: none;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space nav.tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 1em;
-  grid-template-rows: auto;
-  grid-template-areas: "tab1 tab2 ";
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label {
+  background-image: url("assets/teeth/xptooth-white.png");
+  background-size: 100% 100%;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item {
-  flex-grow: 0;
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  background-color: #bbb;
-  border-radius: 20px 20px 0 0;
-  font-family: Kirsty, serif;
-  text-transform: capitalize;
-  padding: 5px 15px;
-  font-size: 2.6em;
+.court-of-blades.actor.sheet.pc .sheet-wrapper header.full-bar .stripe-tooth-body.stress label.on {
+  background-image: url("assets/teeth/xptooth-red.png");
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item select {
-  font-family: Kirsty;
-  font-size: 1em;
-  height: 80%;
-  position: relative;
-  top: -6px;
-  left: 2px;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item>div {
-  margin: 5px 10px;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item.playbook {
-  grid-area: tab1;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item.notes {
-  grid-area: tab2;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item .playbook-description {
-  font-family: "Crimson Text", serif;
-  font-size: 0.4em;
-  font-variant: small-caps;
-  font-weight: bold;
-  color: #666;
-  text-align: center;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item.active {
-  margin-bottom: 0;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-item:not(.active) {
-  background-color: rgba(187, 187, 187, 0.5);
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content {
-  flex-basis: 100%;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook {
-  display: grid;
-  align-items: stretch;
-  justify-items: stretch;
-  grid-template-columns: 2fr 1em 1fr 1fr;
-  grid-template-rows: repeat(3, min-content);
-  grid-template-areas: "abilities gutter pb-items all-items" "abilities gutter friends all-items" "abilities gutter xp-notes xp-notes";
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook select {
-  font-family: Kirsty, serif;
-  text-transform: capitalize;
-  font-size: 2.6em;
-  border: none;
-  background-color: #f00;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook::after {
-  content: "";
-  background: #bbb;
-  grid-area: gutter;
-  height: 100%;
-  width: 100%;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook section {
-  padding-bottom: 0.75em;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities {
-  grid-area: abilities;
-  background: #bbb;
-  padding-bottom: 1em;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block {
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-  padding: 5px;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block input {
-  margin: 0;
-  margin-right: 3px;
-  position: relative;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list .ability-block input.offset {
-  margin-top: -3px;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label {
-  margin: 0;
-  line-height: 0.8em;
-  font-size: 1.2em;
-  margin-bottom: 6px;
-  padding-right: 1em;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label .ability-name {
-  font-weight: bold;
-  font-variant: small-caps;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .abilities .ability-list label .ability-description p {
-  display: inline;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .playbook-items {
-  grid-area: pb-items;
-  background: #bbb;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list {
-  font-size: 1.2em;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .free-item {
-  font-style: italic;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block {
-  padding: 2px 5px;
-  position: relative;
-  line-height: 0;
-}
-
-.allow-edit .item-block:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .checkbox {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .item-name {
-  width: 100%;
-  position: relative;
-  line-height: 1em;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block .join-line {
-  border: 1px solid #666;
-  width: 1em;
-  display: inline-block;
-  height: 0px;
-  margin: 0 -0.5em;
-  top: calc(-0.5em + 5px);
-  position: relative;
-  z-index: 0;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .item-list .item-block input {
-  margin-left: 0;
-  position: relative;
-  z-index: 10;
-  bottom: 0px;
-}
-
+/* -------------------------------- Playbook -------------------------------- */
+/* Friends and rivals */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .friends-rivals {
   grid-area: friends;
   background: #bbb;
@@ -1500,116 +1684,227 @@
   color: #006600;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .all-items {
-  grid-area: all-items;
+/* -------------------------------------------------------------------------- */
+/*                                 Crew sheet                                 */
+/* -------------------------------------------------------------------------- */
+
+/* --------------------------------- Sizing --------------------------------- */
+.court-of-blades.actor.sheet.crew {
+  min-width: 800px;
+  min-height: 225px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes {
-  grid-area: xp-notes;
-  background: #bbb;
-  font-size: 1.2em;
+/* ----------------------------- Minimized view ----------------------------- */
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view {
+  display: grid;
+  height: 185px;
+  grid-template-columns: auto 1fr;
+  column-gap: 1em;
+  grid-template-rows: 2fr 1fr 1fr 4fr;
+  grid-template-areas: "portrait main-row" "portrait sub-row-1" "portrait sub-row-2" "portrait variables";
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes p {
-  line-height: 1em;
+/* Portrait */
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .character-portrait {
+  grid-area: portrait;
+  place-self: center;
+  width: 170px;
+  height: 170px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  position: relative;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes ul {
-  list-style-type: square;
-  padding-right: 5px;
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .character-portrait .portrait {
+  border-radius: 100px;
+  overflow: hidden;
+  border: 6px solid #999;
+  width: 100% !important;
+  /* FIXME reconcile with Dark UI, remove important!*/
+  height: 100% !important;
+  /* FIXME reconcile with Dark UI, remove important!*/
+  position: relative;
+  left: 0px;
+  top: 0px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook .xp-notes ul li {
-  font-style: italic;
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .character-portrait .portrait>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3) inset;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .playbook header.full-bar {
+/* -------------------------- Name and description -------------------------- */
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .name-alias {
+  font-family: Kirsty, serif;
+  font-weight: bold;
+  font-size: 3em;
+  color: #191813;
+  grid-area: main-row;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .heritage-background {
+  grid-area: sub-row-1;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .abilities-list {
+  grid-area: sub-row-2;
+}
+
+/* --------------------------- Exposure and Shame --------------------------- */
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .exposure-shame {
+  grid-area: variables;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .exposure-shame {
+  display: flex;
+  justify-content: space-between;
+  justify-items: stretch;
+  max-width: 600px;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .exposure-shame header.full-bar {
   background-color: #666;
   color: #EEEFFF;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime {
+  background-color: #191813;
+  color: #EEEFFF;
+  padding: 3px;
+  width: 100%;
+  font-family: Kirsty, serif;
+  font-size: 1rem;
+  position: relative;
+  margin-bottom: 5px;
   line-height: 1em;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime h3 {
-  text-align: center;
-  font-family: Kirsty, serif;
-  font-size: 2em;
-  margin: 0.5em;
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .exposure-shame .exposure, 
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .exposure-shame .shame {
+  flex-grow: 1;
+  margin: 25px 5px 10px 5px;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime header {
+/* -------------------------------- Influence ------------------------------- */
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box {
+  max-width: 100px;
   width: 100%;
-  font-family: Kirsty, serif;
-  background-color: #191813;
-  color: #EEEFFF;
-  padding: 3px;
-  text-align: center;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime header .header-row {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 2px 0;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper {
-  display: flex;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper table tr {
-  text-align: center;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper table tr td,
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper table tr th {
-  padding: 3px;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper table tr th {
-  background-color: #191813;
-  color: #EEEFFF;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper .column {
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper .column section {
-  background-color: #bbb;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper .column section p {
-  text-align: center;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper .column section ul {
-  padding-right: 1em;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab.downtime .downtimeWrapper .column section ul li {
-  margin-bottom: 3px;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .character-notes-area {
-  background-color: #bbb;
+  max-height: 30px;
   box-sizing: border-box;
-  padding: 10px;
-  font-size: 1.2em;
-  min-height: 650px;
-  height: 100%;
+  font-size: 1rem;
+  border-radius: 7.5px;
+  color: #191813;
+  font-family: Kirsty, serif;
+  text-align: center;
+  z-index: 600;
+  margin-top: 20px;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box>div {
+  display: inline-block;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-.court-of-blades.actor.sheet.pc .sheet-wrapper .tab-space .tab-content .tab .character-notes-area header {
-  font-size: 0.9em;
-  flex-grow: 0;
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins label {
+  height: 15px;
+  width: 15px;
+  background-color: #DAA520;
+  vertical-align: middle;
+  border: 1px solid #191813;
+  transition: filter 0.1s;
+  cursor: pointer;
 }
 
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins label[for$="-0"] {
+  margin-right: 0px;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input {
+  display: none;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input:checked~label {
+  background-color: #EEEFFF;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input:checked+label {
+  background-color: #DAA520;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input~label {
+  margin-right: 3px;
+  margin-bottom: 3px;
+  transition: filter 0.2s;
+  cursor: pointer;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input~label[for$="0"] {
+  border-width: 2px;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input~label:hover {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins.coins-hands {
+  width: 72px;
+  margin: auto;
+}
+
+/*.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open .coins {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open .coins .hand,
+.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open .coins .stash {
+  display: inline-block;
+  text-align: left;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                 Item sheets                                */
+/* -------------------------------------------------------------------------- */
+
+.court-of-blades.item.sheet {
+  justify-content: space-between;
+}
+
+.court-of-blades.item.sheet section {
+  padding-bottom: 1em;
+}
+
+.court-of-blades.item.sheet section input.item_field {
+  font-size: 1.5em;
+}
+
+.court-of-blades.item.sheet section header {
+  width: 100%;
+}
+
+.court-of-blades.item.sheet section header label {
+  display: block;
+  background-color: #000;
+  margin-bottom: 0;
+  color: #fff;
+  font-family: Kirsty, serif;
+  font-size: 1rem;
+  padding: 2px;
+}
+
+/* ---------------------------------- Class --------------------------------- */
 .court-of-blades.item.sheet.class .attributes-actions {
   display: flex;
   justify-content: space-between;
@@ -1639,7 +1934,6 @@
 .court-of-blades.item.sheet.class .attributes-actions .attribute .action {
   padding: 0 5px;
   display: flex;
-  /* Hide the browser's default checkbox */
   justify-content: flex-start;
   align-items: stretch;
 }
@@ -1722,33 +2016,7 @@
   display: none;
 }
 
-.court-of-blades.item.sheet {
-  justify-content: space-between;
-}
-
-.court-of-blades.item.sheet section {
-  padding-bottom: 1em;
-}
-
-.court-of-blades.item.sheet section input.item_field {
-  font-size: 1.5em;
-}
-
-.court-of-blades.item.sheet section header {
-  width: 100%;
-}
-
-.court-of-blades.item.sheet section header label {
-  display: block;
-  background-color: #000;
-  margin-bottom: 0;
-  color: #fff;
-  font-family: Kirsty, serif;
-  font-size: 1rem;
-  padding: 2px;
-}
-
-.bitd-alt.tooltip {
+/*.bitd-alt.tooltip {
   display: none;
   position: absolute;
   padding: 10px;
@@ -1758,158 +2026,4 @@
   border-radius: 3px;
   z-index: 9999999;
   max-width: 300px;
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                 Crew sheet                                 */
-/* -------------------------------------------------------------------------- */
-
-/* ----------------------- Minimized view organization ---------------------- */
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view {
-  display: grid;
-  height: 185px;
-  grid-template-columns: auto 1fr;
-  column-gap: 1em;
-  grid-template-rows: 2fr 1fr 1fr 4fr;
-  grid-template-areas: "portrait main-row" "portrait sub-row-1" "portrait sub-row-2" "portrait actions";
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .character-portrait {
-  grid-area: portrait;
-  place-self: center;
-  width: 170px;
-  height: 170px;
-  flex-shrink: 0;
-  flex-grow: 0;
-  position: relative;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .character-portrait .portrait {
-  border-radius: 100px;
-  overflow: hidden;
-  border: 6px solid #999;
-  width: 100% !important; /* FIXME reconcile with Dark UI, remove important!*/
-  height: 100% !important; /* FIXME reconcile with Dark UI, remove important!*/
-  position: relative;
-  left: 0px;
-  top: 0px;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .name-alias {
-  font-family: Kirsty, serif;
-  font-weight: bold;
-  font-size: 3em;
-  color: #191813;
-  grid-area: main-row;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .heritage-background {
-  grid-area: sub-row-1;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .abilities-list {
-  grid-area: sub-row-2;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .attributes-actions {
-  grid-area: actions;
-}
-
-/* --------------------------- Exposure and Shame --------------------------- */
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .attributes-actions .attribute {
-  flex-grow: 1;
-  margin: 25px 5px 10px 5px;
-}
-
-/* -------------------------------- Influence ------------------------------- */
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box {
-  max-width: 100px;
-  width: 100%;
-  max-height: 30px;
-  box-sizing: border-box;
-  font-size: 1rem;
-  border-radius: 7.5px;
-  color: #191813;
-  font-family: Kirsty, serif;
-  text-align: center;
-  z-index: 600;
-  margin-top: 20px;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open {
-  color: #191813;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box>div {
-  display: inline-block;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins {
-  display: flex;
-  /* Hide the browser's default checkbox */
-  flex-wrap: wrap;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins label {
-  height: 15px;
-  width: 15px;
-  background-color: #DAA520;
-  vertical-align: middle;
-  border: 1px solid #191813;
-  transition: filter 0.1s;
-  cursor: pointer;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins label[for$="-0"] {
-  margin-right: 0px;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input {
-  display: none;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input:checked~label {
-  background-color: #EEEFFF;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input:checked+label {
-  background-color: #DAA520;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input~label {
-  margin-right: 3px;
-  margin-bottom: 3px;
-  transition: filter 0.2s;
-  cursor: pointer;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input~label[for$="0"] {
-  border-width: 2px;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins input~label:hover {
-  filter: brightness(0.8);
-  opacity: 0.9;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box .coins.coins-hands {
-  width: 72px;
-  margin: auto;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open .coins {
-  display: flex;
-  justify-content: space-between;
-}
-
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open .coins .hand,
-.court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .coins-box.open .coins .stash {
-  display: inline-block;
-  text-align: left;
-}
+}*/
