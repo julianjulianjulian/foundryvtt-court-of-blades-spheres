@@ -443,7 +443,7 @@ export class CourtOfBladesCharacterSheet extends CourtOfBladesSheet {
       classes: ["court-of-blades", "sheet", "pc", "actor"],
       template: "modules/court-of-blades/templates/character-sheet.hbs",
       width: 800,
-      height: "auto",
+      height: 1200,
       tabs: [{ navSelector: ".tabs", contentSelector: ".tab-content", initial: "playbook" }]
     });
   }
