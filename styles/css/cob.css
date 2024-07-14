@@ -861,10 +861,11 @@
 /* ----------------------------- Minimized view ----------------------------- */
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view {
   display: grid;
-  height: 235px;
+  height: fit-content;
+  min-height: 235px;
   grid-template-columns: auto 1fr;
   column-gap: 1em;
-  grid-template-rows: 2fr 1fr 1fr 1fr 4fr;
+  /*grid-template-rows: 2fr 1fr 1fr 1fr 4fr;*/
   grid-template-areas: "portrait main-row" "portrait sub-row-1" "portrait sub-row-2" "portrait sub-row-3" "portrait actions";
 }
 
@@ -1456,17 +1457,34 @@
 }
 
 /* -------------------------- Name and description -------------------------- */
+.court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .bio {
+  border-bottom: 2px solid #191813;
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 1.6em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .bio:hover {
+  overflow: visible;
+  background-color: #191813;
+  line-clamp: 99;
+  -webkit-line-clamp: 99;
+  height: max-content;
+}
+
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .name-alias {
   font-family: Kirsty, serif;
   color: #191813;
   grid-area: main-row;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  min-height: 3.5em;
 }
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .name-alias .name {
-  font-size: 3em;
+  font-size: 3.2em;
   font-weight: bold;
 }
 
@@ -1481,14 +1499,29 @@
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .look {
   grid-area: sub-row-2;
-}
-
-.court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .bio {
-  border-bottom: 2px solid #191813;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  min-height: 3em;
 }
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .abilities-list {
   grid-area: sub-row-3;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 3em;
+}
+
+.court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .abilities-list:hover {
+  overflow: visible;
+  background-color: #191813;
+  line-clamp: unset;
+  -webkit-line-clamp: unset;
+  height: max-content;
 }
 
 /* ------------------------------- Attributes ------------------------------- */
