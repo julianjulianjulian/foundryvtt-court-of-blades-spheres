@@ -1465,7 +1465,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: 1.6em;
+  min-height: 3.2em;
+  padding: 0px 4px;
 }
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .bio:hover {
@@ -1480,7 +1481,7 @@
   font-family: Kirsty, serif;
   color: #191813;
   grid-area: main-row;
-  min-height: 3.5em;
+  min-height: 3.6em;
 }
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .name-alias .name {
@@ -1501,7 +1502,6 @@
   grid-area: sub-row-2;
   line-clamp: 2;
   -webkit-line-clamp: 2;
-  min-height: 3em;
 }
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .abilities-list {
@@ -1513,7 +1513,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: 3em;
+  min-height: 3.2em;
+  padding: 0px 4px;
 }
 
 .court-of-blades.actor.sheet.pc .sheet-wrapper .minimized-view .abilities-list:hover {
@@ -1746,7 +1747,7 @@
 /* Portrait */
 .court-of-blades.actor.sheet.crew .sheet-wrapper .minimized-view .character-portrait {
   grid-area: portrait;
-  place-self: center;
+  margin-top: 50px;
   width: 170px;
   height: 170px;
   flex-shrink: 0;

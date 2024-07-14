@@ -420,7 +420,7 @@ export class CourtOfBladesCharacterSheet extends CourtOfBladesSheet {
 
     html.find(".toggle-expand").click(ev => {
       if (!this._element.hasClass("can-expand")) {
-        this.setPosition({ height: 310 });
+        this.setPosition({ height: 340 });
         this._element.addClass("can-expand");
       }
       else {
