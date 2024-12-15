@@ -4,7 +4,7 @@
     "description": "",
     "version": "1",
     "url": "https://github.com/julianjulianjulian/foundryvtt-court-of-blades-spheres/",
-    "manifest": "https://github.com/julianjulianjulian/foundryvtt-court-of-blades-spheres/blob/development/module.json",
+    "manifest": "https://github.com/julianjulianjulian/foundryvtt-court-of-blades-spheres/blob/f5ac312abb948cb862d5865dcfe6c028438218a9/module.json",
     "download": "replaced automatically",
     "manifestPlusVersion": "1.2.0",
     "minimumCoreVersion": "10",
